@@ -7324,14 +7324,6 @@
             "lf_clock_rc_calib_mode_config": {
                 "macro_name": "MBED_CONF_NORDIC_NRF_LF_CLOCK_CALIB_MODE_CONFIG",
                 "value": 0
-            },
-            "uart_0_fifo_size": {
-                "help": "UART0 FIFO buffer. FIFO buffer is filled from DMA buffer.",
-                "value": 32
-            },
-            "uart_1_fifo_size": {
-                "help": "UART1 FIFO buffer. FIFO buffer is filled from DMA buffer.",
-                "value": 32
             }
         },
         "OUTPUT_EXT": "hex",
@@ -7352,38 +7344,6 @@
         ],
         "device_has_remove": ["ITM"]
     },
-    "RIOT_MICRO_MODULE": {
-        "inherits": ["MCU_NRF52832"],
-        "release_versions": ["5"],
-        "public": false,
-        "config": {
-            "modem_is_on_board": {
-                "help": "Value: Tells the build system that the modem is on-board as opposed to a plug-in shield/module.",
-                "value": 1,
-                "macro_name": "MODEM_ON_BOARD"
-            },
-            "modem_data_connection_type": {
-                "help": "Value: Defines how the modem is wired up to the MCU, e.g., data connection can be a UART or USB and so forth.",
-                "value": 1,
-                "macro_name": "MODEM_ON_BOARD_UART"
-            }
-        },
-        "overrides": {
-            "network-default-interface-type": "CELLULAR"
-        },
-        "bootloader_supported": false
-    },
-    "RM6100": {
-        "inherits": ["RIOT_MICRO_MODULE"],
-        "device_name": "nRF52832_xxAA"
-    },
-    "RM7100": {
-        "inherits": ["RIOT_MICRO_MODULE"],
-        "macros_add": [
-            "CONFIG_NFCT_PINS_AS_GPIOS"
-        ],
-        "device_name": "nRF52832_xxAA"
-    },
     "SDT52832B": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
@@ -7393,126 +7353,29 @@
     "UBLOX_EVA_NINA": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
-        "device_name": "nRF52832_xxAA",
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ]
+        "device_name": "nRF52832_xxAA"
     },
     "UBLOX_EVK_NINA_B1": {
         "supported_form_factors": ["ARDUINO"],
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
-        "device_name": "nRF52832_xxAA",
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ],
-        "overrides": {
-            "console-uart-flow-control": "RTSCTS"
-        }
-
+        "device_name": "nRF52832_xxAA"
     },
     "MTB_UBLOX_NINA_B1": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
-        "device_name": "nRF52832_xxAA",
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ]
+        "device_name": "nRF52832_xxAA"
     },
     "MTB_LAIRD_BL652": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
-        "device_name": "nRF52832_xxAA",
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ],
-        "overrides": {
-            "lf_clock_src": "NRF_LF_SRC_RC",
-            "console-uart-flow-control": null
-        }
+        "device_name": "nRF52832_xxAA"
     },
     "MTB_MURATA_WSM_BL241": {
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
         "device_name": "nRF52832_xxAA",
-        "detect_code": ["0466"],
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ],
-        "overrides": {
-            "lf_clock_src": "NRF_LF_SRC_XTAL",
-            "console-uart-flow-control": null
-        }
+        "detect_code": ["0466"]
     },
     "MTB_ACONNO_ACN52832": {
         "inherits": ["MCU_NRF52832"],
@@ -7524,29 +7387,7 @@
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
         "device_name": "nRF52832_xxAA",
-        "device_has_remove": ["ITM"],
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ],
-        "overrides": {
-            "lf_clock_src": "NRF_LF_SRC_RC",
-            "lf_clock_rc_calib_timer_interval": 16,
-            "lf_clock_rc_calib_mode_config": 0
-        }
+        "device_has_remove": ["ITM"]
     },
     "MCU_NRF52840": {
         "inherits": ["Target"],
@@ -7562,8 +7403,7 @@
             "MBED_TICKLESS",
             "MBEDTLS_CONFIG_HW_SUPPORT",
             "WSF_MAX_HANDLERS=10",
-            "MBED_MPU_CUSTOM",
-            "SWI_DISABLE0"
+            "MBED_MPU_CUSTOM"
         ],
         "features": ["CRYPTOCELL310", "BLE"],
         "device_has": [
@@ -7587,8 +7427,7 @@
             "SYSTICK_CLK_OFF_DURING_SLEEP",
             "TRNG",
             "USTICKER",
-            "QSPI",
-            "USBDEVICE"
+            "QSPI"
         ],
         "extra_labels": [
             "NORDIC",
@@ -7613,14 +7452,6 @@
             "lf_clock_rc_calib_mode_config": {
                 "macro_name": "MBED_CONF_NORDIC_NRF_LF_CLOCK_CALIB_MODE_CONFIG",
                 "value": 0
-            },
-            "uart_0_fifo_size": {
-                "help": "UART0 FIFO buffer. FIFO buffer is filled from DMA buffer.",
-                "value": 32
-            },
-            "uart_1_fifo_size": {
-                "help": "UART1 FIFO buffer. FIFO buffer is filled from DMA buffer.",
-                "value": 32
             }
         },
         "overrides": {
@@ -7638,25 +7469,7 @@
         "supported_form_factors": ["ARDUINO"],
         "inherits": ["MCU_NRF52840"],
         "release_versions": ["5"],
-        "device_name": "nRF52840_xxAA",
-        "macros_add": [
-            "CONFIG_GPIO_AS_PINRESET",
-            "NRF52_ERRATA_20"
-        ]
-    },
-    "ARDUINO_NANO33BLE": {
-        "inherits": ["MCU_NRF52840"],
-        "release_versions": ["5"],
-        "device_name": "nRF52840_xxAA",
-        "features_add": ["BLE", "STORAGE"],
-        "components_remove": ["QSPIF"],
-        "components_add": ["FLASHIAP"],
-        "device_has_remove": ["QSPI"],
-        "device_has_add": ["FLASH"],
-        "macros_add": [
-            "CONFIG_GPIO_AS_PINRESET",
-            "NRF52_ERRATA_20"
-        ]
+        "device_name": "nRF52840_xxAA"
     },
     "MTB_LAIRD_BL654": {
         "inherits": ["MCU_NRF52840"],
@@ -8309,28 +8122,7 @@
         "supported_form_factors": ["ARDUINO"],
         "inherits": ["MCU_NRF52832"],
         "release_versions": ["5"],
-        "device_name": "nRF52832_xxAA",
-        "macros_add": [
-                "CONFIG_GPIO_AS_PINRESET",
-                "NRF52_PAN_12",
-                "NRF52_PAN_15",
-                "NRF52_PAN_20",
-                "NRF52_PAN_30",
-                "NRF52_PAN_31",
-                "NRF52_PAN_36",
-                "NRF52_PAN_51",
-                "NRF52_PAN_53",
-                "NRF52_PAN_54",
-                "NRF52_PAN_55",
-                "NRF52_PAN_58",
-                "NRF52_PAN_62",
-                "NRF52_PAN_63",
-                "NRF52_PAN_64"
-        ],
-        "overrides": {
-            "console-uart-flow-control": "RTSCTS"
-        }
-
+        "device_name": "nRF52832_xxAA"
     },
     "MCU_M480": {
         "core": "Cortex-M4F",
