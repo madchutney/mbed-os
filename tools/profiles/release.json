@@ -5,7 +5,7 @@
                    "-fmessage-length=0", "-fno-exceptions",
                    "-ffunction-sections", "-fdata-sections", "-funsigned-char",
                    "-MMD", "-fno-delete-null-pointer-checks",
-                   "-fomit-frame-pointer", "-Os", "-DNDEBUG", "-g"],
+                   "-fomit-frame-pointer", "-Os", "-DNDEBUG", "-g1"],
         "asm": ["-x", "assembler-with-cpp"],
         "c": ["-std=gnu11"],
         "cxx": ["-std=gnu++14", "-fno-rtti", "-Wvla"],
@@ -24,8 +24,7 @@
         "asm": [],
         "c": ["-D__ASSERT_MSG", "-std=gnu11"],
         "cxx": ["-fno-rtti", "-std=gnu++14"],
-        "ld": ["--show_full_path", "--legacyalign", "--any_contingency",
-               "--keep=os_cb_sections"]
+        "ld": ["--show_full_path", "--legacyalign", "--keep=os_cb_sections"]
     },
     "ARM": {
         "common": ["-c", "--gnu", "-Ospace", "--split_sections",
@@ -34,7 +33,7 @@
         "asm": [],
         "c": ["--md", "--no_depend_system_headers", "--c99", "-D__ASSERT_MSG"],
         "cxx": ["--cpp11", "--no_rtti", "--no_vla"],
-        "ld": ["--show_full_path", "--any_contingency", "--keep=os_cb_sections"]
+        "ld": ["--show_full_path",  "--keep=os_cb_sections"]
     },
     "uARM": {
         "common": ["-c", "--gnu", "-Ospace", "--split_sections",
@@ -49,7 +48,7 @@
     "IAR": {
         "common": [
             "--no_wrap_diagnostics", "-e",
-            "--diag_suppress=Pa050,Pa084,Pa093,Pa082,Pe540", "-Ohz", "-DNDEBUG", "--enable_restrict"],
+            "--diag_suppress=Pa050,Pa084,Pa093,Pa082", "-Ohz", "-DNDEBUG", "--enable_restrict"],
         "asm": [],
         "c": ["--vla", "--diag_suppress=Pe546"],
         "cxx": ["--guard_calls", "--no_static_destruction"],
