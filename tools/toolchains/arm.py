@@ -160,9 +160,9 @@ class ARM(mbedToolchain):
 
     def _get_toolchain_labels(self):
         if getattr(self.target, "default_toolchain", "ARM") == "uARM":
-            return ["ARM", "ARM_MICRO", "ARMC5"]
+            return ["ARM", "ARM_MICRO"]
         else:
-            return ["ARM", "ARM_STD", "ARMC5"]
+            return ["ARM", "ARM_STD"]
 
     def parse_dependencies(self, dep_path):
         dependencies = []
